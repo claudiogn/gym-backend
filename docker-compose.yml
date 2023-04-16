@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+
+  postgres:
+    image: postgres:14.2
+    environment:
+      POSTGRES_USER: gym-backend
+      POSTGRES_PASSWORD: test_db_password
+    ports: 
+      - '5432:5432'
+    volumes:
+      - gym-backend-postgres:/var/lib/postgresql/data
+
+  gym-backend:
+    build:
+      context: .
+    volumes:
+      - ./gym-backend:/opt/app
+    depends_on:
+      - postgres
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+
+volumes:
+  gym-backend-postgres:
