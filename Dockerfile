@@ -21,4 +21,4 @@ RUN yarn install
 # RUN chmod +x ./entrypoints/docker-entrypoint.sh
 
 # Start server
-ENTRYPOINT ["/bin/bash", "./entrypoints/docker-entrypoint.sh"]
+ENTRYPOINT ["./entrypoints/docker-entrypoint.sh"]
