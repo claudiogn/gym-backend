@@ -12,11 +12,13 @@ RUN mkdir -p $INSTALL_PATH
 
 # Install gems
 WORKDIR $INSTALL_PATH
-COPY gym-backend/ .
+COPY . .
 RUN rm -rf node_modules vendor
+
 RUN gem install rails bundler
 RUN bundle install
 RUN yarn install
+# RUN chmod +x ./entrypoints/docker-entrypoint.sh
 
 # Start server
-ENTRYPOINT ["./entrypoints/docker-entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "./entrypoints/docker-entrypoint.sh"]

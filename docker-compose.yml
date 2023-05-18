@@ -16,7 +16,7 @@ services:
     build:
       context: .
     volumes:
-      - ./gym-backend:/opt/app
+      - .:/opt/app
     depends_on:
       - postgres
     ports:
