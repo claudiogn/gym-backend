@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  set_sequence_number: 1
+  number_of_sets: 1
+  min_number_of_repetitions: 1
+  max_number_of_repetitions: 1
+  rest_duration_in_seconds: 1
+  description: MyText
+  workout_routine_exercise: one
+
+two:
+  set_sequence_number: 1
+  number_of_sets: 1
+  min_number_of_repetitions: 1
+  max_number_of_repetitions: 1
+  rest_duration_in_seconds: 1
+  description: MyText
+  workout_routine_exercise: two
