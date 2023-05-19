@@ -22,21 +22,20 @@ workout_routine_exercise
   workout_routine fk
   exercise fk
 session
-  name
   active
   started_at
   ended_at
   workout_routine fk
-set_details
+workout_set_details
   number_of_sets
   min_number_of_repetitions
   max_number_of_repetitions
   rest_duration_in_seconds
   description
   workout_routine_exercise fk
-set_execution
+workout_set_execution
   set_sequence_number
   weight
   plates
-  set_details fk
+  workout_set_details fk
   

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_19_000208) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_19_000435) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -86,6 +86,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_19_000208) do
     t.index ["workout_routine_exercise_id"], name: "index_workout_set_details_on_workout_routine_exercise_id"
   end
 
+  create_table "workout_set_executions", force: :cascade do |t|
+    t.integer "set_sequence_number"
+    t.float "weight"
+    t.integer "plates"
+    t.bigint "workout_set_details_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["workout_set_details_id"], name: "index_workout_set_executions_on_workout_set_details_id"
+  end
+
   add_foreign_key "exercises", "categories"
   add_foreign_key "sessions", "workout_routines"
   add_foreign_key "workout_plans", "users", column: "coach_id"
@@ -94,4 +104,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_19_000208) do
   add_foreign_key "workout_routine_exercises", "workout_plans"
   add_foreign_key "workout_routines", "workout_plans"
   add_foreign_key "workout_set_details", "workout_routine_exercises"
+  add_foreign_key "workout_set_executions", "workout_set_details", column: "workout_set_details_id"
 end

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  set_sequence_number: 1
+  weight: 1.5
+  plates: 1
+  workout_set_details: one
+
+two:
+  set_sequence_number: 1
+  weight: 1.5
+  plates: 1
+  workout_set_details: two
